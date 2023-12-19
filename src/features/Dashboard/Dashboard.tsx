@@ -1,11 +1,10 @@
 import { BarChartSimple, MonthlyRevenue } from './components'
-import { CardFour, CardThree, CardTwo } from '~/components'
+import { CardFour, CardThree } from '~/components'
 import { useGetAnalystQuery, useGetAnalyticsQuery } from '~/store/services'
 
 import { CardOne } from '~/components/Cart/CardOne'
 import { Loader } from '~/common'
 import { ProductAnalytic } from './components/product-analytic'
-import { Table } from 'antd'
 
 const FeatureDashboard = () => {
   const { data: dataAnalytics, isLoading: loadingTotalMoneys, isError: errorAnalytics } = useGetAnalyticsQuery()

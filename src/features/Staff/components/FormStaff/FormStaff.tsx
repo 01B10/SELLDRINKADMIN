@@ -1,7 +1,6 @@
 import { Drawer, Form, Image, Input, Select } from 'antd'
 import { useAppDispatch } from '~/store/store'
 import { setOpenDrawer, setToppingId } from '~/store/slices'
-// import { useEffect, useState } from 'react'
 
 import { Button } from '~/components'
 import { useAddUserMutation, useUpLoadAvartaUserMutation, useUpdateUserMutation } from '~/store/services/Users'
