@@ -5,7 +5,7 @@ import Enviroment from '~/utils/checkEnviroment'
 
 export const categoryApi = createApi({
   reducerPath: 'categoryApi',
-  baseQuery: fetchBaseQuery({ baseUrl: Enviroment() }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
   tagTypes: ['Category'],
   endpoints: (builder) => ({
     getAllCategory: builder.query<ICategoryDocs, { _page: number; _limit: number }>({
