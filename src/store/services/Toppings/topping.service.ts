@@ -1,9 +1,10 @@
 import { IDocsToppings, ITopping } from '~/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const toppingApi = createApi({
   reducerPath: 'toppingApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
   tagTypes: ['Topping'],
   endpoints: (builder) => ({
     /* Lấy ra tất cả topping */

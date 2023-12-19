@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IVoucher, IVoucherDocs } from '~/types'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const VoucherApi = createApi({
   reducerPath: 'voucherApi',
 
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API
+    baseUrl: Enviroment('api')
   }),
   tagTypes: ['Vouchers'],
   endpoints: (builder) => ({

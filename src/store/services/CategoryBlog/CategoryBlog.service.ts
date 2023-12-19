@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { ICategoryBlog, ICategoryBlogDocs } from '~/types'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const categoryBlogApi = createApi({
   reducerPath: 'categoryBlogApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
   tagTypes: ['categoryBlog'],
   endpoints: (builder) => ({
     // tạo mới category blog
@@ -50,7 +51,7 @@ export const categoryBlogApi = createApi({
     // xóa danh mục bài viết
     deleteCategoryBlog: builder.mutation<ICategoryBlog, number | string>({
       query: (id) => ({
-        url: `category-blog/${id}`,
+        url: `/category-blog/${id}`,
         method: 'DELETE'
       }),
       invalidatesTags: [{ type: 'categoryBlog', id: 'LIST' }]

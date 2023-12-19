@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RootState } from '~/store/store'
 import { IResImage, IUserDocs } from '~/types'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API,
+    baseUrl: Enviroment('api'),
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
       const accessToken = (getState() as RootState).persistedReducer.auth.user?.accessToken

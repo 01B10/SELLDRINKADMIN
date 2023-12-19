@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IResImage, ISLider, ISLiderDocs } from '~/types'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const sliderApi = createApi({
   reducerPath: 'sliderApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
   tagTypes: ['Sliders'],
   endpoints: (builder) => ({
     getAllSliders: builder.query<ISLiderDocs, void>({

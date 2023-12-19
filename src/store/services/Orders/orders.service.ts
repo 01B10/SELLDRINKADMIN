@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const orderApi = createApi({
   reducerPath: 'orderApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
   tagTypes: ['Orders'],
   endpoints: (builder) => ({
     getAllOrder: builder.query<any, { limit: number; page: number }>({

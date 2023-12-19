@@ -1,10 +1,11 @@
 import { IDocSize, ISize } from '~/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const sizeApi = createApi({
   reducerPath: 'sizeApi',
 
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
 
   tagTypes: ['Sizes'],
 

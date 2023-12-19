@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import { ICategoryDocs } from '~/types'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const categoryApi = createApi({
   reducerPath: 'categoryApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment() }),
   tagTypes: ['Category'],
   endpoints: (builder) => ({
     getAllCategory: builder.query<ICategoryDocs, { _page: number; _limit: number }>({

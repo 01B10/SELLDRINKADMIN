@@ -1,9 +1,10 @@
 import { IProduct, IProductDocs } from '~/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const productApi = createApi({
   reducerPath: 'productApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
   tagTypes: ['Product'],
 
   endpoints: (builder) => ({

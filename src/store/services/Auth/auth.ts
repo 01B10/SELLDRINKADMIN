@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Login } from '~/pages/SignIn/validate'
 import { ResIUser } from '~/types'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const AuthApi = createApi({
   reducerPath: 'AuthApi',
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: Enviroment('api') }),
   tagTypes: ['AuthApi'],
   endpoints: (builder) => ({
     signIn: builder.mutation<ResIUser, Login>({
@@ -17,7 +18,7 @@ export const AuthApi = createApi({
     }),
     logOut: builder.mutation<void, void>({
       query: () => ({
-        url: 'http://localhost:8000/auth/logout',
+        url: `${Enviroment()}/auth/logout`,
         method: 'POST',
         credentials: 'include'
       })
