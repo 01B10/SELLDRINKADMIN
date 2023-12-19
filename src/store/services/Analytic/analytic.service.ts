@@ -1,10 +1,11 @@
 import { DataAnalytics, IAnalyticMonths, IAnalytics } from '~/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import Enviroment from '~/utils/checkEnviroment'
 
 export const analyticApi = createApi({
   reducerPath: 'analyticApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API
+    baseUrl: Enviroment('api')
   }),
   tagTypes: ['Analytics'],
   endpoints: (builder) => ({

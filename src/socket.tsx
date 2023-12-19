@@ -1,6 +1,7 @@
 import { Socket, io } from 'socket.io-client'
+import Enviroment from './utils/checkEnviroment'
 
-const socket: Socket = io('ws://localhost:8000', {
+const socket: Socket = io(Enviroment(), {
   transports: ['websocket', 'pulling', 'flashsocket']
 })
 
