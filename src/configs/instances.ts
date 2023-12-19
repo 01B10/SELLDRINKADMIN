@@ -1,10 +1,11 @@
 import axios, { AxiosInstance } from 'axios'
+import Enviroment from '~/utils/checkEnviroment'
 
 class Http {
   instance: AxiosInstance
   constructor() {
     this.instance = axios.create({
-      baseURL: import.meta.env.VITE_API,
+      baseURL: Enviroment(),
       timeout: 10000,
       headers: {
         'Content-Type': 'application/json'

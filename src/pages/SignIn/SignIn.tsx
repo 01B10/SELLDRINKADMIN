@@ -28,8 +28,8 @@ export default function SignIn() {
         dataUser == 'admin'
           ? (navigate('/dashboard'), toast.success('Đăng nhập thành công'))
           : dataUser == 'staff'
-          ? (navigate('/manager/orders'), toast.success('Đăng nhập thành công'))
-          : toast.error('Bạn không có quyền truy cập')
+            ? (navigate('/manager/orders'), toast.success('Đăng nhập thành công'))
+            : toast.error('Bạn không có quyền truy cập')
       }
     })
   }

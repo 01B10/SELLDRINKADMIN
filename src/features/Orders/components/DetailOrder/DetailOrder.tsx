@@ -257,19 +257,19 @@ const DetailOrder = ({ open }: DetailOrderProps) => {
                   orderData.status === 'canceled'
                     ? 'bg-meta-1'
                     : orderData.status === 'pending'
-                    ? 'bg-meta-6'
-                    : orderData.status === 'done'
-                    ? 'bg-meta-3'
-                    : 'bg-meta-5'
+                      ? 'bg-meta-6'
+                      : orderData.status === 'done'
+                        ? 'bg-meta-3'
+                        : 'bg-meta-5'
                 } rounded inline-block px-2 py-1`}
               >
                 {orderData.status === 'canceled'
                   ? 'Đã hủy'
                   : orderData.status === 'pending'
-                  ? 'Chờ xác nhận'
-                  : orderData.status === 'done'
-                  ? 'Hoàn thành'
-                  : 'Xác nhận'}
+                    ? 'Chờ xác nhận'
+                    : orderData.status === 'done'
+                      ? 'Hoàn thành'
+                      : 'Xác nhận'}
               </span>
             </div>
             {orderData?.reasonCancelOrder && (

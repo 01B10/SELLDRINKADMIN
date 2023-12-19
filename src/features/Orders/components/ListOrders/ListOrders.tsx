@@ -171,10 +171,10 @@ const ListOrders = () => {
             status === 'canceled'
               ? 'bg-meta-1'
               : status === 'pending'
-              ? 'bg-meta-6'
-              : status === 'done'
-              ? 'bg-meta-3'
-              : 'bg-meta-5'
+                ? 'bg-meta-6'
+                : status === 'done'
+                  ? 'bg-meta-3'
+                  : 'bg-meta-5'
           } rounded inline-block px-2 py-1`}
         >
           {status}
